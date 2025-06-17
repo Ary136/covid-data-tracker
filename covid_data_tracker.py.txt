@@ -1,0 +1,28 @@
+import requests
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Fetch COVID-19 data from Our World in Data
+url = 'https://covid.ourworldindata.org/data/owid-covid-data.csv'
+print("Downloading data...")
+df = pd.read_csv(url)
+
+# Filter for a specific country
+country = 'India'  # You can change this to any country name
+country_df = df[df['location'] == country]
+
+# Keep only the relevant columns
+country_df = country_df[['date', 'new_cases', 'new_deaths']]
+country_df['date'] = pd.to_datetime(country_df['date'])
+
+# Plotting new cases and deaths over time
+plt.figure(figsize=(10, 5))
+plt.plot(country_df['date'], country_df['new_cases'], label='New Cases', color='blue')
+plt.plot(country_df['date'], country_df['new_deaths'], label='New Deaths', color='red')
+plt.title(f'COVID-19 Trends in {country}')
+plt.xlabel('Date')
+plt.ylabel('Count')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
