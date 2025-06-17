@@ -19,3 +19,10 @@ This project visualizes COVID-19 daily new cases and deaths for a selected count
 ### Python Script
 ```bash
 python covid_data_tracker.py
+## Screenshot
+
+![COVID-19 Data Tracker Screenshot](./screenshot.png)
+## Contact
+
+📧 fatimarazvisyedamaryam@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/syeda-maryam-fatima-razvi-a86030350/)
